@@ -14,8 +14,13 @@ export default class  extends Component {
         {/* 获取store里面的数据 */}
 
         { this.store.getState().phone }
+        <button onClick= { this.outlogin}>退出登录</button>
       </div>
     )
+  }
+  // 退出登录
+  outlogin = () => {
+    sessionStorage.clear()
   }
   // componentDidMount() {
   //   console.log(this.store.getState());

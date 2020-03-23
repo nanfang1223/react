@@ -1,19 +1,20 @@
 import axios from 'axios'
-import { qsStringify } from '../axios/common'
-import { oCookie } from '../axios/common'
+// import { qsStringify } from '../axios/common'
+// import { oCookie } from '../axios/common'
 import { Toast } from 'antd-mobile';
+import store from '../store/index'
 // import MyAlert from '../components/MyAlert/index'
 // import router from '@/router'
 
 // 请求拦截
-axios.interceptors.request.use(config => {
-  if (oCookie.get(['token']).token) {
-    config.headers.token = oCookie.get(['token']).token
-  }
-  return config
-}, error => {
-  return Promise.reject(error)
-})
+// axios.interceptors.request.use(config => {
+//   if (oCookie.get(['token']).token) {
+//     config.headers.token = oCookie.get(['token']).token
+//   }
+//   return config
+// }, error => {
+//   return Promise.reject(error)
+// })
 
 axios.interceptors.response.use(response => {
   // console.log(response,'response')
@@ -24,13 +25,13 @@ axios.interceptors.response.use(response => {
 
 // axios.defaults.baseURL = process.env.VUE_APP_MOCK_URL
 //自动切换环境
-if (process.env.NODE_ENV === 'development'){
-  axios.defaults.baseURL = '/apis';
-} else if (process.env.NODE_ENV === 'debug'){
-  axios.defaults.baseURL = '/apis';
-} else if (process.env.NODE_ENV === 'production') { 
-  axios.defaults.baseURL = 'http://***********/';
-}
+// if (process.env.NODE_ENV === 'development'){
+//   axios.defaults.baseURL = '/api';
+// } else if (process.env.NODE_ENV === 'debug'){
+//   axios.defaults.baseURL = '/api';
+// } else if (process.env.NODE_ENV === 'production') { 
+//   axios.defaults.baseURL = 'http://***********/';
+// }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.timeout = 15000
 
@@ -40,6 +41,7 @@ const resHandle = (res, resolve) => {
     // router.replace('/')
     // alert(res.data.message)
     Toast.info(res.data.message)
+    sessionStorage.clear()
     this.props.history.push('/')
     resolve(res)
   } else if (res.data.code === 400) { // 
@@ -62,13 +64,17 @@ const resHandle = (res, resolve) => {
 //put： 更新数据（将所有的数据都推送到后端）
 //patch： 更新数据（只将修改的数据推送到后端）
 //delete：删除数据
+//请求方式
 export default {
   get(url, params= {}) {
     return new Promise((resolve) => {
       axios({
         method: 'get',
-        url,
-        params
+        url: url,
+        data: params,
+        headers: {
+          token: store.getState().token
+        }
       }).then(response => {
         resHandle(response, resolve)
       })
@@ -79,40 +85,12 @@ export default {
       axios({
         method: 'post',
         url,
-        data: qsStringify(params)
-      }).then(response => {
-        resHandle(response, resolve)
-      })
-    })
-  },
-  postJson(url, params = {}) {
-    return new Promise((resolve) => {
-      axios({
-        method: 'post',
-        url,
-        data: params
-      }).then(response => {
-        resHandle(response, resolve)
-      })
-    })
-  },
-  file(url, params = {}) {
-    const Form = new FormData()
-    for (const key in params) {
-      if (params.hasOwnProperty(key)) {
-        Form.append('file', params[key])
-      }
-    }
-    return new Promise((resolve) => {
-      axios({
+        data: params,
         headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        method: 'post',
-        url,
-        data: Form
+          token: store.getState().token
+        }
       }).then(response => {
-        resHandle(response.data, resolve)
+        resHandle(response, resolve)
       })
     })
   }

@@ -30,5 +30,7 @@ ReactDOM.render(<Provider store={configStore}>
 // https://segmentfault.com/a/1190000018150177
 // 解决react 余 radux的版本不同问题,,,删除nodemodius重新安装
 
+// 使react的config暴露  https://blog.csdn.net/weixin_44462907/article/details/90451171
 // react 移动端适配问题
+// https://www.cnblogs.com/sohuhome/p/11808882.html
 serviceWorker.unregister();

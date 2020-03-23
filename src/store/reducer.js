@@ -23,6 +23,11 @@ export default (state = defaultState, action) => {
     const newState = JSON.parse(JSON.stringify(state))
     newState.phone = action.phone
     return newState
+  }else if(action.type === '退出清空') {
+    const newState = JSON.parse(JSON.stringify(state))
+    newState.token = ''
+    sessionStorage.clear()
+    return newState
   }
   return state
 }
