@@ -19,7 +19,7 @@ export default class Login extends Component {
     }
     // console.log(this.state.story);
 
-    // 监听store发生改变就会执行
+    // 监听store发生改变就会执行,监听函数
     store.subscribe(this.changeStore)
   }
   // const history = createHashHistory();{[require("../assets/img/2x.png")]}
@@ -72,12 +72,19 @@ export default class Login extends Component {
         phone: phone
       }
       store.dispatch(aphone)
+      
+      const foot = {
+        type: '底部切换',
+        footTab: 1
+      }
+      store.dispatch(foot)
       Toast.info(logins.data.message)
       this.props.history.push('/home')
     }
   }
 
   changeInputA = (e) => {
+    console.log(e);
     const value = e.target.value
     // 
     const action = {
@@ -105,5 +112,11 @@ export default class Login extends Component {
   changeStore = () => {
     //  console.log(store.getState());
     this.setState(store.getState())
+  }
+  componentWillUnmount(){
+    // 卸载异步操作设置状态
+      this.setState = (state, callback) => {
+        return;
+      }
   }
 }

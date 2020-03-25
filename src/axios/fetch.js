@@ -3,6 +3,7 @@ import axios from 'axios'
 // import { oCookie } from '../axios/common'
 import { Toast } from 'antd-mobile';
 import store from '../store/index'
+// import React from "react";
 // import MyAlert from '../components/MyAlert/index'
 // import router from '@/router'
 
@@ -38,11 +39,9 @@ axios.defaults.timeout = 15000
 const resHandle = (res, resolve) => {
   // console.log(res,resolve)
   if (res.data.code === 300) { // token过期
-    // router.replace('/')
-    // alert(res.data.message)
     Toast.info(res.data.message)
+    store.getState().isprops.history.push('/')
     sessionStorage.clear()
-    this.props.history.push('/')
     resolve(res)
   } else if (res.data.code === 400) { // 
     // this.props.history.push('/')
@@ -66,6 +65,7 @@ const resHandle = (res, resolve) => {
 //delete：删除数据
 //请求方式
 export default {
+  
   get(url, params= {}) {
     return new Promise((resolve) => {
       axios({

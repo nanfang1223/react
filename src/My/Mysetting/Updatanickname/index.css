@@ -1,0 +1,46 @@
+#nickname {
+  min-height: 100vh;
+  background-image: url("../../../common/img/mybg.png");
+  background-size: 100% 100%;
+}
+
+#nickname .content {
+  padding: 38px 30px 0;
+}
+
+#nickname .content .content_input {
+  height: 78px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  line-height: 78px;
+  text-align: left;
+}
+
+#nickname .content .content_input span {
+  font-size: 28px;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #eeeeee;
+  margin: 0 82px 0 32px;
+}
+
+#nickname .content .content_input input {
+  height: 75px;
+  line-height: 78px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+}
+
+#nickname .content button {
+  width: 690px;
+  height: 88px;
+  background: #f8c76f;
+  border-radius: 8px;
+  font-size: 28px;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: black;
+  line-height: 88px;
+  margin-top: 352px;
+}

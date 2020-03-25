@@ -30,7 +30,12 @@ body {
 main {
   display: block;
 }
- 
+ /* ul */
+ ul {
+   margin: 0;
+   padding: 0;
+   outline: none;
+ }
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -166,7 +171,13 @@ textarea {
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
- 
+ /* placeholder */
+ :-ms-input-placeholder {
+   color: #cccccc;
+ }
+ ::-webkit-input-placeholder {
+    color: #cccccc;
+  }
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -186,7 +197,10 @@ button,
 select { /* 1 */
   text-transform: none;
 }
- 
+ button {
+   outline: none;
+   border: none;
+ }
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
@@ -345,4 +359,8 @@ template {
  
 [hidden] {
   display: none;
+}
+/* li */
+li {
+  list-style: none;
 }

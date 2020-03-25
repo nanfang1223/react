@@ -1,0 +1,30 @@
+#updateavatar {
+  min-height: 100vh;
+  background-image: url('../../../common/img/mybg.png');
+  background-size: 100% 100%;
+  .content {
+    .content_avatar {
+      width: 428px;
+      height: 428px;
+      margin: 150px auto 0;
+      background:rgba(0,0,0,0.5);
+      position: relative;
+      img {
+        width: 428px;
+        height: 428px;
+      }
+      input {
+        width: 328px;
+        height: 328px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+        z-index: 99;
+      }
+    }
+  }
+}
