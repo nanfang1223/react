@@ -1,0 +1,83 @@
+#total {
+  min-height: 100vh;
+  background-image: url('../../common/img/mybg.png');
+  background-size: 100% 100%;
+  p {
+    margin: 0;
+  }
+  // 修改插件样式
+  .am-pull-to-refresh-indicator {
+    height: 50px!important;
+    // margin-bottom: 30px!important;
+  }
+  .am-pull-to-refresh-down .am-pull-to-refresh-indicator  {
+    margin-top: -50px!important;
+  }
+  li {
+    height:110px;
+    background:rgba(0,0,0,0.5);
+    border-radius:8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 110px;
+    font-size:24px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    p {
+      width: 33%;
+    }
+    .message_time {
+      line-height: 30px;
+      margin-top: 30px;
+    }
+    // hidden
+    .hidden {
+      display: none;
+    }
+  }
+  .am-list-body {
+    background-color: transparent;
+  }
+  .content {
+    // 资产展示
+    .assetshow {
+      height:136px;
+      background:rgba(0,0,0,0.5);
+      color: #ffffff;
+      font-size:30px;
+      font-family:PingFang SC;
+      font-weight:bold;
+      span {
+        margin-top: 30px;
+        display: inline-block;
+      }
+      p {
+        color: #F8C76F;
+        margin-top: 20px;
+      }
+    }
+    // 列表记录
+    .content_list {
+      padding: 0 28px;
+      height: 85vh;
+      overflow-y: scroll;
+      // 表头
+      .list_title {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        line-height: 70px;
+        // margin-bottom: 100px;
+        p {
+          width: 33%;
+          font-size:24px;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:rgba(0,0,0,1);
+        }
+      }
+    }
+  }
+}

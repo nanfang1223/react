@@ -11,7 +11,10 @@
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
- 
+ /* p */
+ /* p {
+   margin: 0;
+ } */
 /* Sections
    ========================================================================== */
  
@@ -22,7 +25,10 @@
 body {
   margin: 0;
 }
- 
+/*  */
+.hidden {
+  display: none;
+}
 /**
  * Render the `main` element consistently in IE.
  */

@@ -46,7 +46,7 @@ export default class My extends Component {
             {/* 资产收益展示 */}
             <div className='content_top_money'>
               <ul>
-                <li>
+                <li onClick={()=> this.Topage('Totalasset')}>
                   <span>{ this.state.total_assets_total }</span>
                   <p>总资产</p>
                 </li>
@@ -179,6 +179,8 @@ export default class My extends Component {
   Topage = (e) => {
     if (e === 'setting') {
       this.props.history.push('/Mysetting')
+    } if (e === 'Totalasset') {
+      this.props.history.push('/Totalasset')
     }
   }
   componentDidMount() {
