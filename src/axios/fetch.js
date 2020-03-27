@@ -77,6 +77,8 @@ export default {
         }
       }).then(response => {
         resHandle(response, resolve)
+      }).catch(() => {
+        Toast.info('服务器未响应哦~')
       })
     })
   },
@@ -91,6 +93,8 @@ export default {
         }
       }).then(response => {
         resHandle(response, resolve)
+      }).catch(() => {
+        Toast.info('服务器未响应哦~')
       })
     })
   }

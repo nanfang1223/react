@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import store from '../../store'
-import './index.min.css'
+import './index.scss'
 
 export default class Header extends Component {
   static propTypes = {}
@@ -9,7 +9,7 @@ export default class Header extends Component {
     super(props);
     this.state = {
       historys: store.getState().isprops.history
-    }
+    } 
   }
 
   render () {
