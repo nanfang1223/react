@@ -1,11 +1,6 @@
 import axios from 'axios'
-// import { qsStringify } from '../axios/common'
-// import { oCookie } from '../axios/common'
 import { Toast } from 'antd-mobile';
 import store from '../store/index'
-// import React from "react";
-// import MyAlert from '../components/MyAlert/index'
-// import router from '@/router'
 
 // 请求拦截
 // axios.interceptors.request.use(config => {
@@ -37,25 +32,19 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 axios.defaults.timeout = 15000
 
 const resHandle = (res, resolve) => {
-  // console.log(res,resolve)
   if (res.data.code === 300) { // token过期
     Toast.info(res.data.message)
     store.getState().isprops.history.push('/')
     sessionStorage.clear()
     resolve(res)
-  } else if (res.data.code === 400) { // 
-    // this.props.history.push('/')
-    // alert(res.data.message)
-    Toast.info(res.data.message)
+  } else if (res.data.code === 400) {
+    Toast.fail(res.data.message)
     resolve(res)
   } else if (res.data === null) {
-    // MyAlert('接口返回数据为空！')
     resolve()
   } else if (res.data.code === 200) {
-    // console.log('success')
     resolve(res)
   } else {
-    // MyAlert(res.msg)
     resolve(res)
   }
 }

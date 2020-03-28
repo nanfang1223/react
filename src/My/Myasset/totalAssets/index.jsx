@@ -23,6 +23,7 @@ class Total extends Component {
       height: document.documentElement.clientHeight,//默认高度
       useBodyScroll: false,//如果使用useBodyScroll属性在listView组件的外面就不要在放其他的元素。否则onScroll事件会失效。
       hasMore: true,//数据加载完毕之后为false
+      allmoney: 0,//展示总资产
     };
   }
 
@@ -57,8 +58,13 @@ class Total extends Component {
       page: this.pageNo
     })
     if (allMoneys.data.code === 200) {
-
+      this.setState(() => {
+        return {
+          allmoney: allMoneys.data.data.total
+        }
+      })
       // 当数据加载完毕
+      // alert(allMoneys.data.data.total_assets.data.length)
       if (allMoneys.data.data.total_assets.data.length === 0) {
         // this.state.hasMore = false
         this.setState(() => {
@@ -66,7 +72,7 @@ class Total extends Component {
             hasMore: false
           }
         })
-        return
+        return []
       }
       // 当有数据返回数据源
       return allMoneys.data.data.total_assets.data
@@ -85,6 +91,7 @@ class Total extends Component {
       refreshing: false,
       isLoading: false,
     });
+    console.log(this.state.isLoading);
   };
 
   // 上拉加载的时候触发
@@ -150,7 +157,7 @@ class Total extends Component {
           {/* 资产显示 */}
           <div className='assetshow'>
             <span>总资产</span>
-            <p>0</p>
+            <p>{ this.state.allmoney }</p>
           </div>
           {/* 记录列表 */}
           <div className='content_list'>

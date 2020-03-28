@@ -1,0 +1,48 @@
+#center {
+  min-height: 100vh;
+  background-image: url('../../common/img/mybg.png');
+  background-size: 100% 100%;
+  .content {
+    padding: 38px 30px 0;
+    .lists {
+      height:78px;
+      line-height: 78px;
+      background:rgba(0,0,0,0.5);
+      border-radius:8px;
+      margin-bottom: 20px;
+      // 左侧
+      .lists_left {
+        float: left;
+        img {
+          width: 37px;
+          height: 42px;
+          vertical-align: middle;
+          margin: 0 14px 0 20px;
+        }
+        span {
+          font-size:24px;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:rgba(238,238,238,1);
+        }
+      }
+      // 右侧
+      .lists_right {
+        text-align: right;
+        span {
+          font-size:20px;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:rgba(204,204,204,1);
+        }
+        img {
+          width: 9px;
+          height: 20px;
+          transform: rotate(180deg);
+          margin: 0 21px 0 18px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

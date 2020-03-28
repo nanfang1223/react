@@ -11,6 +11,7 @@
   color:rgba(255,255,255,1);
   position: relative;
   border-bottom: 2px solid #5D5D5D;
+  clear: both;
   img {
     width: 15px;
     height: 32px;
@@ -18,5 +19,15 @@
     position: absolute;
     left: 30px;
     top: 28px;
+  }
+  p {
+    position: absolute;
+    font-size:28px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    right: 28px;
+    margin: 0;
+    top: 0;
   }
 }

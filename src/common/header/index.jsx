@@ -17,6 +17,7 @@ export default class Header extends Component {
       <div id='header'>
           <img src={ require('../img/left.png')} alt="" onClick={() => this.state.historys.goBack()}/>
           <span>{ this.props.title }</span>
+          { this.props.righttext ?  <p>{ this.props.righttext}</p> : ''}
       </div>
     )
   }

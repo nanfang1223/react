@@ -179,11 +179,20 @@ textarea {
 }
  /* placeholder */
  :-ms-input-placeholder {
-   color: #cccccc;
+   color: #ffffff;
  }
  ::-webkit-input-placeholder {
-    color: #cccccc;
+    color: #ffffff;
   }
+  /* input */
+input {
+  border: none;
+  color: #ffffff;
+}
+/* noboder */
+.noborder {
+  border: none!important;
+}
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.

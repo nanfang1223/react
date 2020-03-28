@@ -1,0 +1,54 @@
+#loginpw {
+  min-height: 100vh;
+  background-image: url('../../../common/img/mybg.png');
+  background-size: 100% 100%;
+  // 表单列表
+  .lists {
+    margin: 20px 28px;
+    background:rgba(0,0,0,0.5);
+    border-radius:8px;
+    .lists_msg {
+      height: 90px;
+      line-height: 90px;
+      text-align: left;
+      border-bottom: 1px solid #5D5D5D;
+      span {
+        font-size:24px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(238,238,238,1);
+        margin: 0 70px 0 33px;
+      }
+      input {
+        width: 250px;
+        height: 90px;
+        font-size:20px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(204,204,204,1);
+        background-color: transparent;
+      }
+      button {
+        height: 90px;
+        background-color: transparent;
+        font-size:20px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(204,204,204,1);
+      }
+    }
+  }
+  // 确认按钮
+  .surebtn {
+    width:690px;
+    height:88px;
+    background:rgba(248,199,111,1);
+    border-radius:8px;
+    line-height: 88px;
+    margin: 240px auto 0;
+    font-size:28px;
+    font-family:PingFang SC;
+    font-weight:bold;
+    color:rgba(0,0,0,1);
+  }
+}

@@ -50,7 +50,7 @@ export default class My extends Component {
                   <span>{ this.state.total_assets_total }</span>
                   <p>总资产</p>
                 </li>
-                <li>
+                <li onClick={()=> this.Topage('AccumulatedIncome')}>
                   <span>{ this.state.accumulated_income_total }</span>
                   <p>累计收益</p>
                 </li>
@@ -75,7 +75,7 @@ export default class My extends Component {
                 <span>我的神兽</span>
                 <img src={ require('../common/img/right.png')} alt="" className='right_logo'/>
               </li>
-              <li>
+              <li onClick={() => this.Topage('Myrecharge')}>
                 <div className='list_logo'>
                   <img src={require('../common/img/mychongbi.png')} alt=""/>
                 </div>
@@ -108,7 +108,7 @@ export default class My extends Component {
                 <span>邀请好友</span>
                 <img src={ require('../common/img/right.png')} alt="" className='right_logo'/>
               </li>
-              <li>
+              <li onClick={ () => {this.Topage('Choosepaytype')}}>
                 <div className='list_logo'>
                   <img src={require('../common/img/mycard.png')} alt=""/>
                 </div>
@@ -129,7 +129,7 @@ export default class My extends Component {
                 <span>实名认证</span>
                 <img src={ require('../common/img/right.png')} alt="" className='right_logo'/>
               </li>
-              <li className='clearboder'>
+              <li className='clearboder' onClick={ () => {this.Topage('Securitycenter')}}>
                 <div className='list_logo'>
                   <img src={require('../common/img/myanquan.png')} alt=""/>
                 </div>
@@ -178,9 +178,17 @@ export default class My extends Component {
   // 页面跳转
   Topage = (e) => {
     if (e === 'setting') {
-      this.props.history.push('/Mysetting')
-    } if (e === 'Totalasset') {
-      this.props.history.push('/Totalasset')
+      this.props.history.push('/Mysetting')//设置
+    } else if (e === 'Totalasset') {
+      this.props.history.push('/Totalasset')//总资产
+    } else if (  e === 'AccumulatedIncome') {
+      this.props.history.push('/AccumulatedIncome')//累计收益
+    } else if (  e === 'Myrecharge') {
+      this.props.history.push('/Myrecharge')//充值
+    } else if( e === 'Securitycenter') {
+      this.props.history.push('/Securitycenter')//安全中心
+    } else if( e === 'Choosepaytype') {
+      this.props.history.push('/Choosepaytype')//选择支付方式
     }
   }
   componentDidMount() {

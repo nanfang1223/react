@@ -102,7 +102,7 @@ class Total extends Component {
           isLoading: false
         }
       })
-      return
+      return []
     }
 
     this.setState({ isLoading: true });
@@ -118,7 +118,6 @@ class Total extends Component {
     const row = (res, sectionID, index) => {
       return (
         <li key={index}>
-          {/* <p>{res.type}</p> */}
           <p className={res.type === 1 ? '' : 'hidden'}>充值</p>
           <p className={res.type === 2 ? '' : 'hidden'}>提现</p>
           <p className={res.type === 103 ? '' : 'hidden'}>下单</p>
@@ -145,11 +144,11 @@ class Total extends Component {
     };
     return (
       <div id='total'>
-        <Header title='总资产' />
+        <Header title='累计收益' />
         <div className='content'>
           {/* 资产显示 */}
           <div className='assetshow'>
-            <span>总资产</span>
+            <span>累计收益</span>
             <p>0</p>
           </div>
           {/* 记录列表 */}
