@@ -46,6 +46,20 @@
       }
     }
   }
+  // 记住密码
+  .resivepw {
+    text-align: right;
+    margin-right: 73px;
+    span {
+      color: orange;
+      vertical-align: middle;
+    }
+    img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+  }
   // 登录按钮
   button {
     width:622px;

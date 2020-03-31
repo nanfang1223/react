@@ -1,0 +1,35 @@
+#addpaytype {
+  min-height: 100vh;
+  background-image: url('../../../common/img/mybg.png');
+  background-size: 100% 100%;
+  .content {
+    padding: 20px 28px;
+    .content_msg {
+      height:100px;
+      background:rgba(0,0,0,0.5);
+      border-radius:8px;
+      line-height: 100px;
+      margin-bottom: 20px;
+      text-align: left;
+      img {
+        width: 41px;
+        vertical-align: middle;
+        margin: 0 30px;
+      }
+      span {
+        vertical-align: middle;
+        font-size:28px;
+        font-family:PingFang SC;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        line-height:30px;
+      }
+      p {
+        float: right;
+        vertical-align: middle;
+        margin: 0 20px;
+        color: yellow;
+      }
+    }
+  }
+}

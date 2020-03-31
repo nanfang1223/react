@@ -188,6 +188,7 @@ textarea {
 input {
   border: none;
   color: #ffffff;
+  background-color: transparent;
 }
 /* noboder */
 .noborder {

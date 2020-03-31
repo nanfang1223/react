@@ -22,6 +22,8 @@ import Securitycenter from './My/securitycennter' //我的-安全中心
 import Fundpw from './My/securitycennter/fundpw' //我的-安全中心-修改资金密码
 import Loginpw from './My/securitycennter/loginpw' //我的-安全中心-修改登录密码
 import Choosepaytype from './My/choosepaytype' //我的-安全中心-修改登录密码
+import Addpaytype from './My/choosepaytype/addpaytype' //我的-选择支付方式-添加支付方式
+import Addzfb from './My/choosepaytype/addzfb' //我的-安全中心-选择支付方式-添加支付宝
 
 function App() {
   return (
@@ -59,6 +61,10 @@ function App() {
       <Route exact path='/Loginpw' component={Loginpw}></Route>
       {/* 我的页面-选择支付方式 */}
       <Route exact path='/Choosepaytype' component={Choosepaytype}></Route>
+      {/* 我的页面-选择支付方式-添加支付方式 */}
+      <Route exact path='/Addpaytype' component={Addpaytype}></Route>
+      {/* 我的页面-选择支付方式-添加支付宝 */}
+      <Route exact path='/Addzfb' component={Addzfb}></Route>
     </div>
     </Router>
   );

@@ -2,4 +2,74 @@
   min-height: 100vh;
   background-image: url('../../common/img/mybg.png');
   background-size: 100% 100%;
+  .content {
+    padding: 20px 25px;
+    // 暂无绑定方式模块
+    .notype {
+      height:484px;
+      background:rgba(0,0,0,0.5);
+      border-radius:8px;
+      img {
+        width: 207px;
+        margin: 116px auto 0;
+      }
+      p {
+        font-size:18px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(255,255,255,1);
+        line-height:48px;
+      }
+    }
+    // 存在绑定方式
+    .havetype {
+      .lists {
+        text-align: left;
+        .list_message {
+          li {
+            height:100px;
+            background:rgba(0,0,0,0.5);
+            border-radius:8px;
+            line-height: 100px;
+            margin-bottom: 20px;
+            img {
+              width: 41px;
+              vertical-align: middle;
+              margin: 0 30px;
+            }
+            span {
+              vertical-align: middle;
+              font-size:28px;
+              font-family:PingFang SC;
+              font-weight:500;
+              color:rgba(255,255,255,1);
+              line-height:30px;
+            }
+          }
+        }
+      }
+    }
+    // 按钮
+    .addbtn {
+      width:690px;
+      height:88px;
+      background:rgba(248,199,111,1);
+      border-radius:8px;
+      font-size:28px;
+      font-family:PingFang SC;
+      font-weight:bold;
+      color:rgba(0,0,0,1);
+      margin-top: 53px;
+      span {
+        vertical-align: middle;
+      }
+      img {
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+  }
+  
 }
