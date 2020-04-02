@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Header from '../../../common/header'
 import './index.scss'
+import Upimg from '../../../common/updateimg'
 
 export default class Addzfb extends Component {
   static propTypes = {}
   static defaultProps = {}
   constructor (props) {
     super(props);
-    this.state = {}
+    this.state = {
+      zfbimg: '',//支付码
+    }
   }
 
   render () {
@@ -33,12 +36,29 @@ export default class Addzfb extends Component {
               <p>重新上传</p>
             </div>
             <div className='upimg'>
-              <img src={require('../../../common/img/shizi.png')} alt=""/>
-              <input type="file"/>
+              <img src={this.state.zfbimg ? this.state.zfbimg : require('../../../common/img/shizi.png')} alt=""/>
+              <input type="file" onChange={this.upimgs}/>
             </div>
           </div>
+          {/* 手机验证码 */}
+          <div className='phonecode'>
+            <input type="text" placeholder='请输入验证码'/>
+            <button>获取手机验证码</button>
+          </div>
+          {/* 确认按钮 */}
+          <button className='surebtn'>确认添加</button>
         </div>
       </div>
     )
+  }
+
+  // 上传图片
+  upimgs = async(e) => {
+    const imgurl = await Upimg.upimg(e)
+    this.setState(() => {
+      return {
+        zfbimg: imgurl.host + imgurl.avatar
+      }
+    })
   }
 }

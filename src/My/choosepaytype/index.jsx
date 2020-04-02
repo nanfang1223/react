@@ -55,6 +55,7 @@ export default class Choosepaytype extends Component {
             this.state.binklists.length !== 0 ? <ul className='list_message'>
               {
                 this.state.binklists.map((item,index) => {
+                  
                  return (
                   <li key={index}>
                     <img src={require('../../common/img/cards.png')} alt="" />
@@ -77,8 +78,16 @@ export default class Choosepaytype extends Component {
       </div>
     )
   }
-  // 获取绑定银行卡信息
-  bankpayinfo = async () => {
+  // 获取绑定支付宝信息// 获取绑定银行卡信息
+  alipayinfo = async () => {
+    const alipayinfos = await alipayinfo()
+    if (alipayinfos.data.code === 200) {
+      this.setState(() => {
+        return {
+          alilists: alipayinfos.data.data
+        }
+      })
+    }
     const bankpayinfos = await bankpayinfo()
     if (bankpayinfos.data.code === 200) {
       this.setState(() => {
@@ -88,23 +97,10 @@ export default class Choosepaytype extends Component {
       })
     }
   }
-  // 获取绑定支付宝信息
-  alipayinfo = async () => {
-    const alipayinfos = await alipayinfo()
-    if (alipayinfos.data.code === 200) {
-      this.setState(() => {
-        return {
-          alilists: alipayinfos.data.data
-        }
-      })
-
-    }
-  }
   // 挂载之后
   componentDidMount() {
-    this.bankpayinfo()
-    this.alipayinfo().then(() => {
-      console.log(this.state.alilists.length);
+    this.alipayinfo().then((res) => {
+      // console.log(res);
       if (this.state.binklists.length !== 0 || this.state.alilists.length !== 0) {
         this.setState(() => {
           return {

@@ -216,6 +216,7 @@ select { /* 1 */
  button {
    outline: none;
    border: none;
+   background-color: transparent;
  }
 /**
  * Correct the inability to style clickable types in iOS and Safari.

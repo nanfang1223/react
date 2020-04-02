@@ -105,4 +105,7 @@ export const allTotal = data => fetch.post( '/api/Product/allTotal',data)
 // 邀请截图
 export const generalize = data => fetch.post( '/api/user/generalize',data)
 
+// base64位上传图片
+export const base64 = data => fetch.post('/index/Userinfo/img',data)
+
 

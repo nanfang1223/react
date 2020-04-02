@@ -32,6 +32,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 axios.defaults.timeout = 15000
 
 const resHandle = (res, resolve) => {
+  
   if (res.data.code === 300) { // token过期
     Toast.info(res.data.message)
     store.getState().isprops.history.push('/')
@@ -56,6 +57,7 @@ const resHandle = (res, resolve) => {
 export default {
   
   get(url, params= {}) {
+    Toast.loading('加载中...',10)
     return new Promise((resolve) => {
       axios({
         method: 'get',
@@ -65,13 +67,16 @@ export default {
           token: store.getState().token
         }
       }).then(response => {
+        Toast.loading('加载中...',-1)
         resHandle(response, resolve)
       }).catch(() => {
+        Toast.loading('加载中...',-1)
         Toast.info('服务器未响应哦~')
       })
     })
   },
   post(url, params = {}) {
+    Toast.loading('加载中...',10)
     return new Promise((resolve) => {
       axios({
         method: 'post',
@@ -81,8 +86,11 @@ export default {
           token: store.getState().token
         }
       }).then(response => {
+        console.log(2);
+        Toast.loading('加载中...',-1)
         resHandle(response, resolve)
       }).catch(() => {
+        Toast.loading('加载中...',-1)
         Toast.info('服务器未响应哦~')
       })
     })
